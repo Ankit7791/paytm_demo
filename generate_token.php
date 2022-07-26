@@ -34,7 +34,7 @@ $paytmParams["body"] = array(
 * Generate checksum by parameters we have in body
 * Find your Merchant Key in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys 
 */
-$checksum = PaytmChecksum::generateSignature(json_encode($paytmParams["body"], JSON_UNESCAPED_SLASHES), $marchantKey);
+$checksum = PaytmChecksum::generateSignature(json_encode($paytmParams["body"], JSON_UNESCAPED_SLASHES), $merchantKey);
 //  this is to create checksum
 $paytmParams["head"] = array(
  "signature" => $checksum // checksum is signature 
